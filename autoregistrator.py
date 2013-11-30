@@ -24,7 +24,7 @@ class Authorizer:
 
                 'username': username,
                 'password': password
-            })
+            }, verify=False)
         except requests.ConnectionError:
             return LoginStatus.CONNECTION_ERROR
         return self._get_state(r)
