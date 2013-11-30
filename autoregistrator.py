@@ -59,7 +59,7 @@ class SettingsProvider:
         else:
             input_value = raw_input('%s: ' % name).strip()
         self.config.set(SECTION_NAME, name, input_value)
-        with open(CONFIG_FILENAME, 'wb') as configfile:
+        with open(CONFIG_FILENAME, 'w') as configfile:
             self.config.write(configfile)
         return input_value
 
